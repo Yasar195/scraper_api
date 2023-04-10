@@ -7,8 +7,8 @@ router.get("/",  (req, res)=> {
     res.json({status: "amazon web site"})
 })
 
-router.get("/:product", (req, res)=> {
-    axios.get(`https://amazon.in/s?k=${req.params.product}`)
+router.get("/product/", (req, res)=> {
+    axios.get(`https://amazon.in/s?k=${req.query.search}`)
     .then((response)=> {
         const $ = cheerio.load(response.data)
         const results = []
