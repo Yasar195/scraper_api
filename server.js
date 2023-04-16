@@ -10,4 +10,6 @@ app.get('/', (req, res) => {
     res.json({status: "ok"})
 })
 
-server.listen(port)
+server.listen(port, ()=> {
+    console.log("Scraper server is running")
+})
